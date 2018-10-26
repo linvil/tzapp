@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.SysRole" table="sys_role" catalog="user_app" optimistic-lock="version">
+        <id name="roleId" type="java.lang.Integer">
+            <column name="roleId" />
+            <generator class="identity" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="roleName" length="100">
+                <comment>&#189;&#199;&#201;&#171;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="roleDesc" type="string">
+            <column name="roleDesc" length="100">
+                <comment>&#189;&#199;&#201;&#171;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="100">
+                <comment>&#189;&#199;&#201;&#171;&#177;&#234;&#214;&#190;</comment>
+            </column>
+        </property>
+        <set name="sysUsers" table="sys_user_role" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="roleId" not-null="true">
+                    <comment>&#189;&#199;&#201;&#171;Id&#163;&#172;&#193;&#170;&#186;&#207;&#214;&#247;&#188;&#252;</comment>
+                </column>
+            </key>
+            <many-to-many entity-name="com.william.model.SysUser">
+                <column name="userId" not-null="true">
+                    <comment>&#211;&#195;&#187;&#167;Id,&#193;&#170;&#186;&#207;&#214;&#247;&#188;&#252;</comment>
+                </column>
+            </many-to-many>
+        </set>
+        <set name="sysRolePermissions" table="sys_role_permission" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="roleId" not-null="true">
+                    <comment>&#189;&#199;&#201;&#171;Id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.william.model.SysRolePermission" />
+        </set>
+    </class>
+</hibernate-mapping>

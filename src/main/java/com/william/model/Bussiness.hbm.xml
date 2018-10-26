@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.Bussiness" table="bussiness" catalog="user_app" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="bussinessName" type="string">
+            <column name="bussinessName" length="16" not-null="true">
+                <comment>&#201;&#204;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="bussinessCode" type="string">
+            <column name="bussinessCode" length="10" not-null="true">
+                <comment>&#201;&#204;&#187;&#167;&#177;&#224;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="receiptCode" type="string">
+            <column name="receiptCode">
+                <comment>&#201;&#204;&#187;&#167;&#202;&#213;&#191;&#238;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="ownerId" type="int">
+            <column name="ownerId" not-null="true">
+                <comment>&#201;&#204;&#187;&#167;&#203;&#249;&#202;&#244;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>
+                &#202;&#199;&#183;&#241;&#211;&#208;&#208;&#167;&#163;&#168;1&#161;&#162;&#211;&#208;&#208;&#167;&#163;&#172;0&#161;&#162;&#206;&#222;&#208;&#167;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifyTime" type="timestamp">
+            <column name="modifyTime" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

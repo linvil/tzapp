@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.SysRolePermission" table="sys_role_permission" catalog="user_app" optimistic-lock="version">
+        <id name="rpid" type="java.lang.Integer">
+            <column name="rpid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="sysMenu" class="com.william.model.SysMenu" fetch="select">
+            <column name="menuId" not-null="true">
+                <comment>&#200;&#168;&#207;&#222;Id</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="sysRole" class="com.william.model.SysRole" fetch="select">
+            <column name="roleId" not-null="true">
+                <comment>&#189;&#199;&#201;&#171;Id</comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

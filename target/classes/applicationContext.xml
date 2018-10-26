@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 加载资源文件 其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载 -->
+	<bean scope="singleton" id="propertyUtils" class="com.william.utils.PropertyUtils">
+		<property name="locations">
+			<list>
+				<value>classpath:database.properties</value>
+				<value>classpath:sms.properties</value>
+				<value>classpath:config.properties</value>
+			<!-- 	<value>classpath:weixin.properties</value> -->
+			</list>
+		</property>
+	</bean>
+	<!-- <context:property-placeholder
+	location="classpath:database.properties,classpath:sms.properties,classpath:task.properties,classpath:pay.properties" /> -->
+
+	<mvc:annotation-driven />
+
+	<context:component-scan base-package="com.william">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="assignable" expression="com.william.task.Task" />
+	</context:component-scan>
+
+	<!-- 配置eh缓存管理器 -->
+	<bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+
+	<!-- 配置一个简单的缓存工厂bean对象 -->
+	<bean id="registerCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+
+		<!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
+		<property name="cacheName" value="registerCache" />
+	</bean>
+
+	<!-- 配置一个简单的缓存工厂bean对象 -->
+	<bean id="captchaCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+
+		<!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
+		<property name="cacheName" value="captchaCache" />
+	</bean>
+
+	<!-- 配置一个简单的缓存工厂bean对象 -->
+	<bean id="tokenCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+
+		<!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
+		<property name="cacheName" value="tokenCache" />
+	</bean>
+	<bean id="verificationCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+
+		<!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
+		<property name="cacheName" value="verificationCache" />
+	</bean>
+
+</beans>

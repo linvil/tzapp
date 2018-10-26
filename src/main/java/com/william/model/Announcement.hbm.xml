@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.Announcement" table="announcement" catalog="user_app" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title">
+                <comment>&#185;&#171;&#184;&#230;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" not-null="true">
+                <comment>&#185;&#171;&#184;&#230;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="addUser" type="string">
+            <column name="addUser" length="32" not-null="true">
+                <comment>&#204;&#237;&#188;&#211;&#185;&#171;&#184;&#230;&#181;&#196;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>
+                &#202;&#199;&#183;&#241;&#211;&#208;&#208;&#167;&#163;&#186;1&#161;&#162;&#211;&#208;&#208;&#167;&#163;&#187;0&#161;&#162;&#206;&#222;&#208;&#167;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

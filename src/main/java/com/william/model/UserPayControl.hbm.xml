@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.UserPayControl" table="user_pay_control" catalog="user_app" optimistic-lock="version">
+        <id name="userId" type="int">
+            <column name="userId" />
+            <generator class="assigned" />
+        </id>
+        <property name="qqPayStatus" type="byte">
+            <column name="qqPayStatus" not-null="true">
+                <comment>qq&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="h5qqPayStatus" type="byte">
+            <column name="h5qqPayStatus" not-null="true">
+                <comment>h5qq&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="wxPayStatus" type="byte">
+            <column name="wxPayStatus" not-null="true">
+                <comment>&#206;&#162;&#208;&#197;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="h5wxPayStatus" type="byte">
+            <column name="h5wxPayStatus" not-null="true">
+                <comment>h5&#206;&#162;&#208;&#197;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="aliPayStatus" type="byte">
+            <column name="aliPayStatus" not-null="true">
+                <comment>&#214;&#167;&#184;&#182;&#177;&#166;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="h5aliPayStatus" type="byte">
+            <column name="h5aliPayStatus" not-null="true">
+                <comment>h5&#214;&#167;&#184;&#182;&#177;&#166;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="jdPayStatus" type="byte">
+            <column name="jdPayStatus" not-null="true">
+                <comment>&#190;&#169;&#182;&#171;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="unionPayPayStatus" type="byte">
+            <column name="unionPayPayStatus" not-null="true">
+                <comment>&#210;&#248;&#193;&#170;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="bankPayPayStatus" type="byte">
+            <column name="bankPayPayStatus" not-null="true">
+                <comment>&#205;&#248;&#185;&#216;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="h5bankPayStatus" type="byte">
+            <column name="h5BankPayStatus" not-null="true">
+                <comment>h5&#205;&#248;&#185;&#216;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="quickPayStatus" type="byte">
+            <column name="quickPayStatus" not-null="true">
+                <comment>&#191;&#236;&#189;&#221;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="toPayStatus" type="byte">
+            <column name="toPayStatus" not-null="true">
+                <comment>&#180;&#250;&#184;&#182;&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="forwardStatus" type="byte">
+            <column name="forwardStatus" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="apiPayStatus" type="byte">
+            <column name="apiPayStatus" not-null="true">
+                <comment>&#214;&#167;&#184;&#182;api&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="apitoPayStatus" type="byte">
+            <column name="apitoPayStatus" not-null="true">
+                <comment>&#180;&#250;&#184;&#182;api&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="apiForwordStatus" type="byte">
+            <column name="apiForwordStatus" not-null="true">
+                <comment>&#215;&#170;&#213;&#203;api&#215;&#180;&#204;&#172;:0,&#185;&#216;&#177;&#213;;1,&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

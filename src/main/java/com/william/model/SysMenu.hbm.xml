@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.SysMenu" table="sys_menu" catalog="user_app" optimistic-lock="version">
+        <id name="menuId" type="java.lang.Integer">
+            <column name="menuId" />
+            <generator class="identity" />
+        </id>
+        <property name="parentId" type="java.lang.Integer">
+            <column name="parentId">
+                <comment>&#201;&#207;&#188;&#182;Id</comment>
+            </column>
+        </property>
+        <property name="menuName" type="string">
+            <column name="menuName" length="100">
+                <comment>&#178;&#203;&#181;&#165;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="menuIcon" type="string">
+            <column name="menuIcon" length="30">
+                <comment>&#178;&#203;&#181;&#165;&#205;&#188;&#177;&#234;</comment>
+            </column>
+        </property>
+        <property name="menuUrl" type="string">
+            <column name="menuUrl" length="100">
+                <comment>&#178;&#203;&#181;&#165;&#193;&#180;&#189;&#211;</comment>
+            </column>
+        </property>
+        <property name="menuType" type="string">
+            <column name="menuType" length="10">
+                <comment>&#178;&#203;&#181;&#165;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="menuOrder" type="string">
+            <column name="menuOrder" length="10">
+                <comment>&#178;&#203;&#181;&#165;&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="menuStatus" type="string">
+            <column name="menuStatus" length="10">
+                <comment>&#178;&#203;&#181;&#165;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <set name="sysRolePermissions" table="sys_role_permission" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="menuId" not-null="true">
+                    <comment>&#200;&#168;&#207;&#222;Id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.william.model.SysRolePermission" />
+        </set>
+    </class>
+</hibernate-mapping>

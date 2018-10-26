@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.User" table="user" catalog="user_app" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="50">
+                <comment>&#213;&#202;&#186;&#197;,&#206;&#168;&#210;&#187;</comment>
+            </column>
+        </property>
+        <property name="loginPassword" type="string">
+            <column name="LoginPassword" length="100">
+                <comment>&#181;&#199;&#194;&#188;&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="saltLogin" type="string">
+            <column name="saltLogin" length="100">
+                <comment>&#181;&#199;&#194;&#188;&#209;&#206;</comment>
+            </column>
+        </property>
+        <property name="payPassword" type="string">
+            <column name="payPassword" length="100">
+                <comment>&#214;&#167;&#184;&#182;&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="saltPay" type="string">
+            <column name="saltPay" length="100">
+                <comment>&#209;&#206;&#214;&#167;&#184;&#182;</comment>
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="11">
+                <comment>&#211;&#195;&#187;&#167;&#202;&#214;&#187;&#250;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Byte">
+            <column name="type">
+                <comment>&#192;&#224;&#208;&#205;:1,&#206;&#162;&#208;&#197;;2,ios;3,&#176;&#178;&#215;&#191;;4,web</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;:1,&#213;&#253;&#179;&#163;;2,&#210;&#236;&#179;&#163;</comment>
+            </column>
+        </property>
+        <property name="recommendId" type="java.lang.Integer">
+            <column name="RecommendId">
+                <comment>&#205;&#198;&#188;&#246;&#200;&#203;Id</comment>
+            </column>
+        </property>
+        <property name="avatar" type="string">
+            <column name="avatar" length="200">
+                <comment>&#205;&#183;&#207;&#241;</comment>
+            </column>
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" length="10">
+                <comment>&#201;&#250;&#200;&#213;</comment>
+            </column>
+        </property>
+        <property name="sex" type="byte">
+            <column name="sex" not-null="true">
+                <comment>&#208;&#212;&#177;&#240;:1,&#196;&#208;;2,&#197;&#174;</comment>
+            </column>
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age">
+                <comment>&#196;&#234;&#193;&#228;</comment>
+            </column>
+        </property>
+        <property name="nickName" type="string">
+            <column name="nickName" length="50">
+                <comment>&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="frozen" type="java.lang.Byte">
+            <column name="frozen">
+                <comment>&#182;&#179;&#189;&#225;&#215;&#180;&#204;&#172;:0,&#183;&#241;;1,&#202;&#199;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifyTime" type="timestamp">
+            <column name="modifyTime" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="delTf" type="byte">
+            <column name="delTF" not-null="true">
+                <comment>&#201;&#190;&#179;&#253;:0,&#183;&#241;;1,&#201;&#190;&#179;&#253;;</comment>
+            </column>
+        </property>
+        <property name="merchantId" type="java.lang.Integer">
+            <column name="merchantId">
+                <comment>&#201;&#204;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="openId" type="string">
+            <column name="openId" length="32">
+                <comment>openid,&#208;&#161;&#179;&#204;&#208;&#242;&#181;&#199;&#194;&#188;&#202;&#185;&#211;&#195;</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="60">
+                <comment>&#211;&#202;&#188;&#254;</comment>
+            </column>
+        </property>
+        <property name="realName" type="string">
+            <column name="realName" length="20">
+                <comment>&#213;&#230;&#202;&#199;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

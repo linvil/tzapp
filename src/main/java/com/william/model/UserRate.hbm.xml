@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.UserRate" table="user_rate" catalog="user_app" optimistic-lock="version">
+        <id name="userId" type="int">
+            <column name="userId" />
+            <generator class="assigned" />
+        </id>
+        <property name="qqPay" type="string">
+            <column name="qqPay" length="50" not-null="true">
+                <comment>qq</comment>
+            </column>
+        </property>
+        <property name="h5qqPay" type="string">
+            <column name="h5qqPay" length="50" not-null="true">
+                <comment>h5qq</comment>
+            </column>
+        </property>
+        <property name="wxPay" type="string">
+            <column name="wxPay" length="50" not-null="true">
+                <comment>&#206;&#162;&#208;&#197;</comment>
+            </column>
+        </property>
+        <property name="h5wxPay" type="string">
+            <column name="h5wxPay" length="50" not-null="true">
+                <comment>h5&#206;&#162;&#208;&#197;</comment>
+            </column>
+        </property>
+        <property name="aliPay" type="string">
+            <column name="aliPay" length="50" not-null="true">
+                <comment>&#214;&#167;&#184;&#182;&#177;&#166;</comment>
+            </column>
+        </property>
+        <property name="h5aliPay" type="string">
+            <column name="h5aliPay" length="50" not-null="true">
+                <comment>h5&#214;&#167;&#184;&#182;&#177;&#166;</comment>
+            </column>
+        </property>
+        <property name="jdPay" type="string">
+            <column name="jdPay" length="50" not-null="true">
+                <comment>&#190;&#169;&#182;&#171;</comment>
+            </column>
+        </property>
+        <property name="unionPay" type="string">
+            <column name="unionPay" length="50" not-null="true">
+                <comment>&#210;&#248;&#193;&#170;</comment>
+            </column>
+        </property>
+        <property name="bankPay" type="string">
+            <column name="bankPay" length="50" not-null="true">
+                <comment>&#205;&#248;&#185;&#216;</comment>
+            </column>
+        </property>
+        <property name="h5bankPay" type="string">
+            <column name="h5BankPay" length="50" not-null="true">
+                <comment>h5&#205;&#248;&#185;&#216;</comment>
+            </column>
+        </property>
+        <property name="quickPay" type="string">
+            <column name="quickPay" length="50" not-null="true">
+                <comment>&#191;&#236;&#189;&#221;</comment>
+            </column>
+        </property>
+        <property name="toPay" type="string">
+            <column name="toPay" length="50" not-null="true">
+                <comment>&#180;&#250;&#184;&#182;</comment>
+            </column>
+        </property>
+        <property name="forward" type="string">
+            <column name="forward" length="50" not-null="true">
+                <comment>&#215;&#170;&#213;&#203;</comment>
+            </column>
+        </property>
+        <property name="quota" type="string">
+            <column name="quota" length="50" not-null="true">
+                <comment>&#182;&#238;&#182;&#200;:&#181;&#165;&#206;&#187;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="totalQuota" type="string">
+            <column name="totalQuota" length="50" not-null="true">
+                <comment>&#181;&#177;&#200;&#213;&#215;&#220;&#182;&#238;&#182;&#200;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

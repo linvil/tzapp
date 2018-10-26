@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-17 18:32:00 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.SysUser" table="sys_user" catalog="user_app" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="100" not-null="true" unique="true">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" not-null="true">
+                <comment>&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="11">
+                <comment>&#202;&#214;&#187;&#250;</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100">
+                <comment>&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="mark" type="string">
+            <column name="mark" length="100">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="lastLogin" type="date">
+            <column name="lastLogin" length="10">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#181;&#199;&#194;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="loginIp" type="string">
+            <column name="loginIp" length="30">
+                <comment>&#181;&#199;&#194;&#188;ip</comment>
+            </column>
+        </property>
+        <property name="imageUrl" type="string">
+            <column name="imageUrl" length="100">
+                <comment>&#205;&#183;&#207;&#241;&#205;&#188;&#198;&#172;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="locked" type="java.lang.Byte">
+            <column name="locked">
+                <comment>
+                &#213;&#203;&#186;&#197;&#202;&#199;&#183;&#241;&#177;&#187;&#203;&#248;&#182;&#168;&#163;&#168;1&#161;&#162;&#183;&#241;&#163;&#172;0&#161;&#162;&#202;&#199;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="salt" type="string">
+            <column name="salt" length="50">
+                <comment>&#209;&#206;</comment>
+            </column>
+        </property>
+        <property name="delTf" type="java.lang.Byte">
+            <column name="delTF">
+                <comment>&#201;&#190;&#179;&#253;:0,&#183;&#241;;1,&#202;&#199;</comment>
+            </column>
+        </property>
+        <set name="sysRoles" table="sys_user_role" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="userId" not-null="true">
+                    <comment>&#211;&#195;&#187;&#167;Id,&#193;&#170;&#186;&#207;&#214;&#247;&#188;&#252;</comment>
+                </column>
+            </key>
+            <many-to-many entity-name="com.william.model.SysRole">
+                <column name="roleId" not-null="true">
+                    <comment>&#189;&#199;&#201;&#171;Id&#163;&#172;&#193;&#170;&#186;&#207;&#214;&#247;&#188;&#252;</comment>
+                </column>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

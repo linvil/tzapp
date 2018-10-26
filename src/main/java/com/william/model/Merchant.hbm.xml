@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-9 19:20:29 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.william.model.Merchant" table="merchant" catalog="user_app" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="merchantName" type="string">
+            <column name="merchantName" length="32" not-null="true">
+                <comment>&#201;&#204;&#187;&#167;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="no" type="string">
+            <column name="no" length="10">
+                <comment>&#201;&#204;&#187;&#167;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="storeId" type="java.lang.Integer">
+            <column name="storeId">
+                <comment>&#195;&#197;&#181;&#234;id</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="updateTime" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;:0,&#213;&#253;&#179;&#163;;1,&#203;&#248;&#182;&#168;</comment>
+            </column>
+        </property>
+        <property name="delTf" type="java.lang.Byte">
+            <column name="delTF">
+                <comment>&#201;&#190;&#179;&#253;:0,&#183;&#241;;1&#201;&#190;&#179;&#253;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
